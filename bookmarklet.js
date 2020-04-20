@@ -1,3 +1,5 @@
 alert('loaded successfully');
-document.body.appendChild(document.createElement('script').src="https://code.jquery.com/jquery-3.5.0.js");
+var jq = document.createElement('script');
+jq.src="https://code.jquery.com/jquery-3.5.0.js";
+document.appendChild(jq);
 alert('page successfully jQuerified!');
