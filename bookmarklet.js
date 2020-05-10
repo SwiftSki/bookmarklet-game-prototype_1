@@ -5,6 +5,14 @@ document.body.appendChild(jq);
 alert('page successfully jQuerified!');
 
 //variables & functions
+function land (draw, name, price){
+  if(draw === 0){
+    alert(name + ' drawn');
+  }
+  else{
+    alert('pay ' + price);
+  }
+}
 function GO (draw){
   if(draw === 0){
     alert('go drawn');
@@ -73,45 +81,45 @@ function goJail(draw){
 }
 
 var properties = {
-  go : GO(0),
-  mediterranian_avenue : 60,
-  community_chest : chest(0),
-  baltic_avenue : 60,
-  INCOME_TAX : tax(0, "income"),
-  reading_railroad : 200,
-  oriental_avenue : 100,
-  chance : chance(0),
-  vermont_avenue : 100,
-  conneticut_avenue : 120,
-  jail : jail(0),
-  st_charles_place : 140,
-  eletric : 150,
-  states_avenue : 140,
-  virginia_avenue : 160,
-  pennslyvania_railroad : 200,
-  st_james_place : 180,
-  community_chest : chest(0),
-  new_york_avenue : 200,
-  free_parking : parking(0),
-  kentucky_avenue : 220,
-  chance : chance(0),
-  indiana_avenue : 220,
-  illinois_avenue : 240,
-  BBO_railroad : 200,
-  atlantic_avenue : 260,
-  venitor_avenue : 260,
-  water : 150,
-  marvin_gardens : 280,
-  go_to_jail : goJail(0),
-  pacific_avenue : 300,
-  north_carolina_avenue : 300,
-  community_chest : chest(0),
-  pennslyvania_avenue : 320,
-  short_line_railroad : 200,
-  chance : chance(0),
-  park_place : 350,
-  luxury_tax : tax(0, "luxury"),
-  boardwalk : 400
+  0 : GO(0),
+  1 : land(0, 'mediterranian\navenue', 60),
+  2 : chest(0),
+  3 : land(0, 'baltic\navenue', 60),
+  4 : tax(0, "income"),
+  5 : land(0, 'reading\nrailroad', 200),
+  6 : land(0, 'oriental\navenue', 100),
+  7 : chance(0),
+  8 : land(0, 'vermont\navenue', 100),
+  9 : land(0, 'conneticut\navenue', 120),
+  10 : jail(0),
+  11 : land(0, 'st. charles\nplace', 140),
+  12 : land(0,  'electric', 150),
+  13 : land(0, 'states\navenue', 140),
+  14 : land(0, 'virginia\navenue', 160),
+  15 : land(0, 'pennslyvania\nrailroad', 200),
+  16 : land(0, 'st. james\nplace', 180),
+  17 : chest(0),
+  18 : land(0, 'new york\navenue', 200),
+  19 : parking(0),
+  20 : land(0, 'kentucky\navenue', 220),
+  21 : chance(0),
+  22 : land(0, 'indiana\navenue', 220),
+  23 : land(0, 'illinois\navenue', 240),
+  24 : land(0, 'B.B.O\nrailroad', 200),
+  25 : land(0, 'atlantic\navenue', 260),
+  26 : land(0, 'venitor\navenue', 260),
+  27 : land(0, 'water\nworks', 150),
+  28 : land(0, 'marvin\ngardens', 280),
+  29 : goJail(0),
+  30 : land(0, 'pacific\navenue', 300),
+  31 : land(0, 'north\ncarolina\navenue', 300),
+  32 : chest(0),
+  33 : land(0, 'pennslyvania\navenue', 320),
+  34 : land(0, 'short\nline\nrailroad', 200),
+  35 : chance(0),
+  36 : land(0, 'park\nplace', 350),
+  37 : tax(0, "luxury"),
+  38 : land(0, 'boardwalk', 400)
 }
 
 var board = document.createElement('div');
