@@ -1,2 +1,3 @@
-experimental site-
-it will not work
+#monopoly
+
+remember to add ai for ppl w/ no friends
