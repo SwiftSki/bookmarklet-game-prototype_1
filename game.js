@@ -3,7 +3,7 @@ alert('loaded successfully');
 //variables & functions
 function land (name, price){
   if(name.split(' ').shift() != 'go', 'land', 'chest', 'chance', 'jail', 'go to\njail', 'tax', 'parking'){
-    document.getElementById(i).innerHTML = name + '\n' + price;
+//    document.getElementById(i).innerHTML = name + '\n' + price;
     alert(name + ' drawn');
   }
   else{
@@ -90,5 +90,6 @@ board.style.background="rgba(250,250,250,0.7)";
 document.body.appendChild(board);
 
 for(var i = 0; i<39; i++){
-  properties.i;
+//  properties.i;
 }
+alert('done');
