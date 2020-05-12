@@ -2,9 +2,13 @@ alert('loaded successfully');
 
 //variables & functions
 function land (name, price){
-  if(name.split(' ').shift() != 'go', 'land', 'chest', 'chance', 'jail', 'go to\njail', 'tax', 'parking'){
-//    document.getElementById(i).innerHTML = name + '\n' + price;
-    alert(name + ' drawn');
+  if(name != 'go', 'land', 'chest', 'chance', 'jail', 'go to\njail', 'income tax', 'luxury tax', 'parking'){
+    var square = document.createElement('div');
+    square.id = i;
+    square.style = squareStyle;
+    document.body.getElementById('board').appendChild();
+    console.log(i);
+    console.log(name + ' drawn');
   }
   else{
 //    document.getElementById(i).innerHTML = name;
@@ -37,6 +41,7 @@ function goJail(){
   alert('go to jail');
 }
 
+var squareStyle = "width:40px;height:40px;";
 var properties = {
   0  : land('go'),
   1  : land('mediterranian\navenue', 60),
