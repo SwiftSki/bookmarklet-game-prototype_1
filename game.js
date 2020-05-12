@@ -7,7 +7,7 @@ function land (name, price){
     alert(name + ' drawn');
   }
   else{
-    document.getElementById(i).innerHTML = name;
+//    document.getElementById(i).innerHTML = name;
   }
 }
 function GO (){
