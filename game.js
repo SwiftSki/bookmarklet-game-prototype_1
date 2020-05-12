@@ -6,7 +6,7 @@ function land (name, price){
     var square = document.createElement('div');
     square.id = i;
     square.style = squareStyle;
-    document.body.getElementById('board').appendChild();
+    document.getElementById('board').appendChild();
     console.log(i);
     console.log(name + ' drawn');
   }
