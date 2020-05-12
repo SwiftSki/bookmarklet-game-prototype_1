@@ -11,6 +11,8 @@ board.style.background="rgba(250,250,250,0.7)";
 document.body.appendChild(board);
 
 //variables & functions
+var i = 0;
+
 function land (name, price){
   if(name != 'go', 'land', 'chest', 'chance', 'jail', 'go to\njail', 'income tax', 'luxury tax', 'parking'){
     var square = document.createElement('div');
@@ -19,6 +21,7 @@ function land (name, price){
     document.getElementById('board').appendChild(square);
     console.log(i);
     console.log(name + ' drawn');
+    i++;
   }
   else{
 //    document.getElementById(i).innerHTML = name;
