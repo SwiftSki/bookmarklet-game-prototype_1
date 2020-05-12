@@ -81,12 +81,12 @@ var properties = {
 
 var board = document.createElement('div');
 board.id="board";
-board.width="440px";
-board.height="440px";
-board.top="25%";
-board.left="25%";
-board.position = 'fixed';
-board.background="rgba(250,250,250,0.7)";
+board.style.width="440px";
+board.style.height="440px";
+board.style.top="25%";
+board.style.left="25%";
+board.style.position = 'fixed';
+board.style.background="rgba(250,250,250,0.7)";
 document.body.appendChild(board);
 
 for(var i = 0; i<39; i++){
