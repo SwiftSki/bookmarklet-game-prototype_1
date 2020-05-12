@@ -85,6 +85,7 @@ board.width="440px";
 board.height="440px";
 board.top="25%";
 board.left="25%";
+board.position = 'fixed';
 board.background="rgba(250,250,250,0.7)";
 document.body.appendChild(board);
 
