@@ -1,5 +1,15 @@
 alert('loaded successfully');
 
+var board = document.createElement('div');
+board.id="board";
+board.style.width="440px";
+board.style.height="440px";
+board.style.top="25%";
+board.style.left="25%";
+board.style.position = 'fixed';
+board.style.background="rgba(250,250,250,0.7)";
+document.body.appendChild(board);
+
 //variables & functions
 function land (name, price){
   if(name != 'go', 'land', 'chest', 'chance', 'jail', 'go to\njail', 'income tax', 'luxury tax', 'parking'){
@@ -83,16 +93,6 @@ var properties = {
   37 : land('luxury tax'),
   38 : land('boardwalk', 400)
 };
-
-var board = document.createElement('div');
-board.id="board";
-board.style.width="440px";
-board.style.height="440px";
-board.style.top="25%";
-board.style.left="25%";
-board.style.position = 'fixed';
-board.style.background="rgba(250,250,250,0.7)";
-document.body.appendChild(board);
 
 for(var i = 0; i<39; i++){
 //  properties.i;
