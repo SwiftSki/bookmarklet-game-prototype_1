@@ -18,8 +18,8 @@ function land (name, price){
   square.id = i;
   square.style = squareStyle;
   if(i <= 10){
-    square.style.top = document.getElementById('board').height - (i * 10);
-    square.style.left = document.getElementById('board').width - (i * 10);
+//    square.style.top = document.getElementById('board').height - (i * 10);
+//    square.style.left = document.getElementById('board').width - (i * 10);
   }
   else if(i > 10 && i <= 20){
     
