@@ -78,7 +78,11 @@ function squareStyle(){
   console.log(x);
   console.log(y);
   
-  return "width:40px; height:40px; border:1px solid black; position:absolute; top:" + y +"; left:" + x + ";";
+  x = x.toString();
+  y = y.toString();
+  var stylishSquares = "width:40px; height:40px; border:1px solid black; position:absolute; top:" + y +"; left:" + x + ";";
+  
+  return stylishSquares;
 }
 
 var properties = {
