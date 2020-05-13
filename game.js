@@ -42,7 +42,7 @@ function land (name, price){
   console.log(name + ' drawn');
   
   i++;
-  return name + ' ' + price;
+  return [name, price];
 }
 function GO (){
   alert('collect $200');
