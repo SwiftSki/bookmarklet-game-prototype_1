@@ -46,7 +46,7 @@ function land (name, price){
 //  console.log(name + ' drawn');
   
   i++;
-  return [name, price];
+  return [name, price, 0, ' '];
 }
 function GO (){
   alert('collect $200');
@@ -156,4 +156,11 @@ var properties = {
   40 : land('boardwalk', 400)
 };
 
-alert('done');
+alert('done drawing,\nstarting game\n\u3020');
+
+//game starts here
+var money = [1480];
+var players = prompt('how many players?', 1);
+while(money.length < players){
+  money.push(1480);
+}
