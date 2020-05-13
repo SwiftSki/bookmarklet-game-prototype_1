@@ -17,7 +17,26 @@ function land (name, price){
   var square = document.createElement('div');
   square.id = i;
   square.style = squareStyle;
-  square.innerHTML = name + '\n\n' + price;
+  if(i <= 10){
+    square.style.top = document.getElementById('board').height - (i * 10);
+    square.style.left = document.getElementById('board').width - (i * 10);
+  }
+  else if(i > 10 && i <= 20){
+    
+  }
+  else if(i > 20 && i <=30){
+    
+  }
+  else{
+    
+  }
+  
+  if(price != null){
+    square.innerHTML = name + '\n\n' + price;
+  }
+  else{
+    square.innerHTML = name;
+  }
   document.getElementById('board').appendChild(square);
   console.log(i);
   console.log(name + ' drawn');
