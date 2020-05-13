@@ -95,9 +95,9 @@ function squareStyle(){
     y = 0;
   }
   else{
-    compensate = i - 31;
+//    compensate = i - 31;
     x = boardWidth - boardWidth / 11;
-    y = compensate * betterMath(boardHeight / 11);
+    y = betterMath(boardHeight / 11);
   }
   
   console.log(x);
