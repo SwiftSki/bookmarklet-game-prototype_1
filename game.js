@@ -40,6 +40,8 @@ function land (name, price){
   document.getElementById('board').appendChild(square);
   console.log(i);
   console.log(name + ' drawn');
+  
+  return name + ' ' + price;
   i++;
 }
 function GO (){
