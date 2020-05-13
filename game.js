@@ -8,8 +8,8 @@ var board = document.createElement('div');
 board.id="board";
 board.style.width=boardWidth;
 board.style.height=boardHeight;
-board.style.top="25%";
-board.style.left="25%";
+board.style.top="0px";
+board.style.left="0px";
 board.style.position = 'fixed';
 board.style.background="rgba(150,220,255,0.9)";
 document.body.appendChild(board);
@@ -105,7 +105,7 @@ function squareStyle(){
   
   x = x.toString();
   y = y.toString();
-  var stylishSquares = "width:40px; height:40px; border:1px solid black; position:absolute; top:" + y +"; left:" + x + ";";
+  var stylishSquares = "width:" + betterMath(boardWidth / 11) + "px; height:" + betterMath(boardHeight / 11) + "px; border:1px solid black; position:absolute; top:" + y +"; left:" + x + ";";
   
   return stylishSquares;
 }
