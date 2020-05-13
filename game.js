@@ -80,7 +80,7 @@ function squareStyle(){
   else if(i > 11 && i <= 21){
     compensate = i - 11;
     x = 0;
-    y = 440 + 40 - compensate * 40;
+    y = 440 - 40 - compensate * 40;
   }
   else if(i > 21 && i <=31){
     compensate = i - 21;
@@ -90,7 +90,7 @@ function squareStyle(){
   else{
     compensate = i - 31;
     x = 440 - 40;
-    y = compensate * 40;
+    y = 40 + compensate * 40;
   }
   
   console.log(x);
