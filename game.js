@@ -1,5 +1,9 @@
 alert('loaded successfully');
 
+//for the purpose of this not failing....
+const boardWidth  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+const boardHeight = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
+
 var board = document.createElement('div');
 board.id="board";
 board.style.width=boardWidth;
@@ -21,9 +25,6 @@ document.body.appendChild(exit);
 
 
 //variables & functions
-const boardWidth  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-const boardHeight = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
-
 var i = 1;
 
 function land (name, price){
