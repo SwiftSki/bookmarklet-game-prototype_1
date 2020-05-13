@@ -140,7 +140,7 @@ var properties = {
   27 : land('atlantic<br>avenue', 260),
   28 : land('venitor<br>avenue', 260),
   29 : land('water<br>works'),
-  30 : land('marvin<br>gardens, 280),
+  30 : land('marvin<br>gardens', 280),
   31 : land('go to<br>jail'),
   32 : land('pacific<br>avenue', 300),
   33 : land('north<br>carolina<br>avenue', 300),
