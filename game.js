@@ -14,18 +14,14 @@ document.body.appendChild(board);
 var i = 0;
 
 function land (name, price){
-  if(name != 'go', 'land', 'chest', 'chance', 'jail', 'go to\njail', 'income tax', 'luxury tax', 'parking'){
-    var square = document.createElement('div');
-    square.id = i;
-    square.style = squareStyle;
-    document.getElementById('board').appendChild(square);
-    console.log(i);
-    console.log(name + ' drawn');
-    i++;
-  }
-  else{
-//    document.getElementById(i).innerHTML = name;
-  }
+  var square = document.createElement('div');
+  square.id = i;
+  square.style = squareStyle;
+  square.innerHTML = name + '\n\n' + price;
+  document.getElementById('board').appendChild(square);
+  console.log(i);
+  console.log(name + ' drawn');
+  i++;
 }
 function GO (){
   alert('collect $200');
@@ -54,7 +50,7 @@ function goJail(){
   alert('go to jail');
 }
 
-var squareStyle = "width:40px;height:40px;";
+var squareStyle = "width:40px; height:40px; border:1px solid black";
 var properties = {
   0  : land('go'),
   1  : land('mediterranian\navenue', 60),
