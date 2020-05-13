@@ -18,8 +18,8 @@ document.body.appendChild(board);
 var exit = document.createElement('button');
 exit.innerHTML = 'close';
 exit.setAttribute('onclick','document.getElementById("board").remove()');
-exit.style.top = '0px';
-exit.style.left = '0px';
+exit.style.top = boardHeight / 11;
+exit.style.left = boardHeight / 11;
 exit.style.position = 'fixed';
 document.body.appendChild(exit);
 
@@ -114,7 +114,7 @@ var properties = {
   1  : land('go'),
   2  : land('mediterranian<br>avenue', 60),
   3  : land('chest'),
-  4  : land('baltic>br>avenue', 60),
+  4  : land('baltic<br>avenue', 60),
   5  : land('income tax'),
   6  : land('reading<br>railroad', 200),
   7  : land('oriental<br>avenue', 100),
