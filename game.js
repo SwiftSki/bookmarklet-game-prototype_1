@@ -90,7 +90,7 @@ function squareStyle(){
   else{
     compensate = i - 31;
     x = 440 - 40;
-    y = 40 + compensate * 40;
+    y = compensate * 40;
   }
   
   console.log(x);
