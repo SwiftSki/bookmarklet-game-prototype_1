@@ -4,6 +4,9 @@ alert('loaded successfully');
 const boardWidth  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 const boardHeight = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
 
+console.log(boardWidth);
+console.log(boardHeight);
+
 var board = document.createElement('div');
 board.id="board";
 board.style.width=boardWidth;
@@ -100,8 +103,8 @@ function squareStyle(){
     y = compensate * betterMath(boardHeight / 11);
   }
   
-  console.log(x);
-  console.log(y);
+//  console.log(x);
+//  console.log(y);
   
   x = x.toString();
   y = y.toString();
