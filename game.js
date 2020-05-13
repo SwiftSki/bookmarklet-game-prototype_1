@@ -32,7 +32,7 @@ function land (name, price){
   square.id = i;
   square.style = squareStyle();
   
-  if(price !== null){
+  if(price !== undefined){
     square.innerHTML = name + '<br><br>' + price;
   }
   else{
@@ -143,10 +143,10 @@ var properties = {
   30 : land('marvin<br>gardens', 280),
   31 : land('go to<br>jail'),
   32 : land('pacific<br>avenue', 300),
-  33 : land('north<br>carolina<br>avenue', 300),
+  33 : land('north carolina<br>avenue', 300),
   34 : land('chest'),
   35 : land('pennslyvania<br>avenue', 320),
-  36 : land('short<br>line<br>railroad', 200),
+  36 : land('short line<br>railroad', 200),
   37 : land('chance'),
   38 : land('park<br>place', 350),
   39 : land('luxury tax'),
