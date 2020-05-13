@@ -25,8 +25,8 @@ function land (name, price){
     square.innerHTML = name;
   }
   document.getElementById('board').appendChild(square);
-  console.log(i);
-  console.log(name + ' drawn');
+//  console.log(i);
+//  console.log(name + ' drawn');
   
   i++;
   return [name, price];
@@ -59,21 +59,24 @@ function goJail(){
 }
 function squareStyle(){
   if(i <= 10){
-    var x = document.getElementById('board').width - i * 40;
-    var y = document.getElementById('board').height - 40;
+    var x = 440 - i * 40;
+    var y = 440 - 40;
   }
   else if(i > 10 && i <= 20){
     var x = 0;
-    var y = document.getElementById('board').height - i * 40;
+    var y = 440 - i * 40;
   }
   else if(i > 20 && i <=30){
     var x = i * 40;
     var y = 0;
   }
   else{
-    var x = document.getElementById('board').width - 40;
+    var x = 440 - 40;
     var y = i * 10;
   }
+  
+  console.log(x);
+  console.log(y);
   
   return "width:40px; height:40px; border:1px solid black; position:absolute; top:" + y +"; left:" + x + ";";
 }
