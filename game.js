@@ -16,20 +16,7 @@ var i = 0;
 function land (name, price){
   var square = document.createElement('div');
   square.id = i;
-  square.style = squareStyle;
-  if(i <= 10){
-    square.style.top = document.getElementById('board').height - i * 10;
-    square.style.left = document.getElementById('board').width - i * 10;
-  }
-  else if(i > 10 && i <= 20){
-    
-  }
-  else if(i > 20 && i <=30){
-    
-  }
-  else{
-    
-  }
+  square.style = squareStyle();
   
   if(price != null){
     square.innerHTML = name + '\n\n' + price;
@@ -70,8 +57,27 @@ function parking(){
 function goJail(){
   alert('go to jail');
 }
+function squareStyle(){
+  if(i <= 10){
+    var x = document.getElementById('board').width - i * 40;
+    var y = document.getElementById('board').height - 40;
+  }
+  else if(i > 10 && i <= 20){
+    var x = 0;
+    var y = document.getElementById('board').height - i * 40;
+  }
+  else if(i > 20 && i <=30){
+    var x = i * 40;
+    var y = 0;
+  }
+  else{
+    var x = document.getElementById('board').width - 40;
+    var y = i * 10;
+  }
+  
+  return "width:40px; height:40px; border:1px solid black; position:absolute; top:" + y +"; left:" + x + ";";
+}
 
-var squareStyle = "width:40px; height:40px; border:1px solid black";
 var properties = {
   0  : land('go'),
   1  : land('mediterranian\navenue', 60),
