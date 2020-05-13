@@ -10,6 +10,7 @@ board.style.position = 'fixed';
 board.style.background="rgba(150,220,255,0.9)";
 document.body.appendChild(board);
 
+/*
 var exit = document.createElement('button');
 exit.innerHTML = 'close';
 exit.setAttr('onclick','document.getElementById('board').remove()');
@@ -17,6 +18,7 @@ exit.style.top = '0px';
 exit.style.left = '0px';
 exit.style.position = 'fixed';
 document.body.appendChild(exit);
+*/
 
 //variables & functions
 var i = 1;
