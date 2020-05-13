@@ -87,7 +87,7 @@ function squareStyle(){
   else if(i > 11 && i <= 21){
     compensate = i - 11;
     x = 0;
-    y = boardHeight - betterMath(boardHeight / 11) - compensate * 40;
+    y = boardHeight - betterMath(boardHeight / 11) - compensate * betterMath(boardHeight / 11);
   }
   else if(i > 21 && i <=31){
     compensate = i - 21;
@@ -95,9 +95,9 @@ function squareStyle(){
     y = 0;
   }
   else{
-//    compensate = i - 31;
+    compensate = i - 31;
     x = boardWidth - boardWidth / 11;
-    y = betterMath(boardHeight / 11);
+    y = compensate * betterMath(boardHeight / 11);
   }
   
   console.log(x);
