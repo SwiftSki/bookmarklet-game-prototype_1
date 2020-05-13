@@ -13,7 +13,7 @@ document.body.appendChild(board);
 
 var exit = document.createElement('button');
 exit.innerHTML = 'close';
-exit.setAttr('onclick','document.getElementById("board").remove()');
+exit.setAttribute('onclick','document.getElementById("board").remove()');
 exit.style.top = '0px';
 exit.style.left = '0px';
 exit.style.position = 'fixed';
