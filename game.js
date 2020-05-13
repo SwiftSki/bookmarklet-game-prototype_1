@@ -18,7 +18,7 @@ function land (name, price){
   square.id = i;
   square.style = squareStyle();
   
-  if(price != null){
+  if(price !== null){
     square.innerHTML = name + '\n\n' + price;
   }
   else{
@@ -58,21 +58,24 @@ function goJail(){
   alert('go to jail');
 }
 function squareStyle(){
+  var x;
+  var y;
+  
   if(i <= 10){
-    var x = 440 - i * 40;
-    var y = 440 - 40;
+    x = 440 - i * 40;
+    y = 440 - 40;
   }
   else if(i > 10 && i <= 20){
-    var x = 0;
-    var y = 440 - i * 40;
+    x = 0;
+    y = 440 - i * 40;
   }
   else if(i > 20 && i <=30){
-    var x = i * 40;
-    var y = 0;
+    x = i * 40;
+    y = 0;
   }
   else{
-    var x = 440 - 40;
-    var y = i * 10;
+    x = 440 - 40;
+    y = i * 10;
   }
   
   console.log(x);
@@ -127,7 +130,4 @@ var properties = {
   38 : land('boardwalk', 400)
 };
 
-for(var i = 0; i<39; i++){
-//  properties.i;
-}
 alert('done');
