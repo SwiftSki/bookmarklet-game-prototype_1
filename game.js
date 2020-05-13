@@ -2,8 +2,8 @@ alert('loaded successfully');
 
 var board = document.createElement('div');
 board.id="board";
-board.style.width="440px";
-board.style.height="440px";
+board.style.width=boardWidth;
+board.style.height=boardHeight;
 board.style.top="25%";
 board.style.left="25%";
 board.style.position = 'fixed';
@@ -13,7 +13,7 @@ document.body.appendChild(board);
 
 var exit = document.createElement('button');
 exit.innerHTML = 'close';
-exit.setAttribute('onclick','document.getElementById("board").toggle()');
+exit.setAttribute('onclick','document.getElementById("board").remove()');
 exit.style.top = '0px';
 exit.style.left = '0px';
 exit.style.position = 'fixed';
@@ -21,6 +21,9 @@ document.body.appendChild(exit);
 
 
 //variables & functions
+const boardWidth  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+const boardHeight = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
+
 var i = 1;
 
 function land (name, price){
@@ -67,6 +70,9 @@ function parking(){
 function goJail(){
   alert('go to jail');
 }
+function betterMath(x){
+  return x;
+}
 function squareStyle(){
   var x;
   var y;
@@ -74,23 +80,23 @@ function squareStyle(){
   
   if(i <= 11){
     compensate = i;
-    x = 440 - compensate * 40;
-    y = 440 - 40;
+    x = boardWidth - compensate * betterMath(boardWidth / 11);
+    y = boardHeight - boardHeight / 11;
   }
   else if(i > 11 && i <= 21){
     compensate = i - 11;
     x = 0;
-    y = 440 - 40 - compensate * 40;
+    y = boardHeight - betterMath(boardHeight / 11) - compensate * 40;
   }
   else if(i > 21 && i <=31){
     compensate = i - 21;
-    x = compensate * 40;
+    x = compensate * boardWidth / 11;
     y = 0;
   }
   else{
     compensate = i - 31;
-    x = 440 - 40;
-    y = compensate * 40;
+    x = boardWidth - boardWidth / 11;
+    y = compensate * betterMath(boardHeight / 11);
   }
   
   console.log(x);
