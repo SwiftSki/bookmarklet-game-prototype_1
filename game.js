@@ -1,6 +1,6 @@
 alert('loaded successfully');
 
-//for the purpose of this not failing....
+//for the purpose of scaling....
 const boardWidth  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 const boardHeight = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
 
@@ -33,7 +33,7 @@ function land (name, price){
   square.style = squareStyle();
   
   if(price !== null){
-    square.innerHTML = name + '\n\n' + price;
+    square.innerHTML = name + '<br><br>' + price;
   }
   else{
     square.innerHTML = name;
@@ -112,43 +112,43 @@ function squareStyle(){
 
 var properties = {
   1  : land('go'),
-  2  : land('mediterranian\navenue', 60),
+  2  : land('mediterranian<br>avenue', 60),
   3  : land('chest'),
-  4  : land('baltic\navenue', 60),
+  4  : land('baltic>br>avenue', 60),
   5  : land('income tax'),
-  6  : land('reading\nrailroad', 200),
-  7  : land('oriental\navenue', 100),
+  6  : land('reading<br>railroad', 200),
+  7  : land('oriental<br>avenue', 100),
   7  : land('chance'),
-  9  : land('vermont\navenue', 100),
-  10 : land('conneticut\navenue', 120),
+  9  : land('vermont<br>avenue', 100),
+  10 : land('conneticu<br>avenue', 120),
   11 : land('jail'),
-  12 : land('st. charles\nplace', 140),
+  12 : land('st. charles<br>place', 140),
   13 : land('electric', 150),
-  14 : land('states\navenue', 140),
-  15 : land('virginia\navenue', 160),
-  16 : land('pennslyvania\nrailroad', 200),
-  17 : land('st. james\nplace', 180),
+  14 : land('states<br>avenue', 140),
+  15 : land('virginia<br>avenue', 160),
+  16 : land('pennslyvania<br>railroad', 200),
+  17 : land('st. james<br>place', 180),
   18 : land('chest'),
-  19 : land('tennessee\navenue', 180),
-  20 : land('new york\navenue', 200),
+  19 : land('tennessee<br>avenue', 180),
+  20 : land('new york<br>avenue', 200),
   21 : land('parking'),
-  22 : land('kentucky\navenue', 220),
+  22 : land('kentucky<br>avenue', 220),
   23 : land('chance'),
-  24 : land('indiana\navenue', 220),
-  25 : land('illinois\navenue', 240),
-  26 : land('B.B.O\nrailroad', 200),
-  27 : land('atlantic\navenue', 260),
-  28 : land('venitor\navenue', 260),
-  29 : land('water\nworks', 150),
-  30 : land('marvin\ngardens', 280),
-  31 : land('go to\njail'),
-  32 : land('pacific\navenue', 300),
-  33 : land('north\ncarolina\navenue', 300),
+  24 : land('indiana<br>avenue', 220),
+  25 : land('illinois<br>avenue', 240),
+  26 : land('B.B.O<br>railroad', 200),
+  27 : land('atlantic<br>avenue', 260),
+  28 : land('venitor<br>avenue', 260),
+  29 : land('water<br>works50),
+  30 : land('marvin<br>gardens, 280),
+  31 : land('go to<br>jail'),
+  32 : land('pacific<br>avenue', 300),
+  33 : land('north<br>carolina<br>avenue', 300),
   34 : land('chest'),
-  35 : land('pennslyvania\navenue', 320),
-  36 : land('short\nline\nrailroad', 200),
+  35 : land('pennslyvania<br>avenue', 320),
+  36 : land('short<br>line<br>railroad', 200),
   37 : land('chance'),
-  38 : land('park\nplace', 350),
+  38 : land('park<br>place', 350),
   39 : land('luxury tax'),
   40 : land('boardwalk', 400)
 };
