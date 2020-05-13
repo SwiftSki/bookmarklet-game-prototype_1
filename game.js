@@ -60,22 +60,27 @@ function goJail(){
 function squareStyle(){
   var x;
   var y;
+  var compensate;
   
   if(i <= 11){
-    x = 440 - i * 40;
+    compensate = i;
+    x = 440 - compensate * 40;
     y = 440 - 40;
   }
   else if(i > 11 && i <= 21){
+    compensate = i - 11;
     x = 0;
-    y = 440 - i * 40;
+    y = 440 - compensate * 40;
   }
   else if(i > 21 && i <=31){
-    x = i * 40;
+    compensate = i - 21;
+    x = compensate * 40;
     y = 0;
   }
   else{
+    compensate = i - 31;
     x = 440 - 40;
-    y = i * 10;
+    y = compensate * 10;
   }
   
   console.log(x);
@@ -98,7 +103,7 @@ var properties = {
   7  : land('oriental\navenue', 100),
   7  : land('chance'),
   9  : land('vermont\navenue', 100),
-  10  : land('conneticut\navenue', 120),
+  10 : land('conneticut\navenue', 120),
   11 : land('jail'),
   12 : land('st. charles\nplace', 140),
   13 : land('electric', 150),
