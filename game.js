@@ -180,7 +180,7 @@ function turn(){
         tax("luxury");
       break;
       default:
-        if(properties.targetPlayer[2] === undefined){
+        if(properties[targetPlayer][2] === undefined){
           alert(buy);
         }
         else{
@@ -224,48 +224,48 @@ function buy(){
 
 }
 
-var properties = {
-  1  : land('go'),
-  2  : land('mediterranian<br>avenue', 60),
-  3  : land('community\nchest'),
-  4  : land('baltic<br>avenue', 60),
-  5  : land('income tax'),
-  6  : land('reading<br>railroad', 200),
-  7  : land('oriental<br>avenue', 100),
-  8  : land('chance'),
-  9  : land('vermont<br>avenue', 100),
-  10 : land('conneticu<br>avenue', 120),
-  11 : land('jail'),
-  12 : land('st. charles<br>place', 140),
-  13 : land('electric', 150),
-  14 : land('states<br>avenue', 140),
-  15 : land('virginia<br>avenue', 160),
-  16 : land('pennslyvania<br>railroad', 200),
-  17 : land('st. james<br>place', 180),
-  18 : land('community\nchest'),
-  19 : land('tennessee<br>avenue', 180),
-  20 : land('new york<br>avenue', 200),
-  21 : land('free\nparking'),
-  22 : land('kentucky<br>avenue', 220),
-  23 : land('chance'),
-  24 : land('indiana<br>avenue', 220),
-  25 : land('illinois<br>avenue', 240),
-  26 : land('B.B.O<br>railroad', 200),
-  27 : land('atlantic<br>avenue', 260),
-  28 : land('venitor<br>avenue', 260),
-  29 : land('water<br>works'),
-  30 : land('marvin<br>gardens', 280),
-  31 : land('go to<br>jail'),
-  32 : land('pacific<br>avenue', 300),
-  33 : land('north carolina<br>avenue', 300),
-  34 : land('chest'),
-  35 : land('pennslyvania<br>avenue', 320),
-  36 : land('short line<br>railroad', 200),
-  37 : land('chance'),
-  38 : land('park<br>place', 350),
-  39 : land('luxury tax'),
-  40 : land('boardwalk', 400)
-};
+var properties = [
+  land('go'),
+  land('mediterranian<br>avenue', 60),
+  land('community\nchest'),
+  land('baltic<br>avenue', 60),
+  land('income tax'),
+  land('reading<br>railroad', 200),
+  land('oriental<br>avenue', 100),
+  land('chance'),
+  land('vermont<br>avenue', 100),
+  land('conneticu<br>avenue', 120),
+  land('jail'),
+  land('st. charles<br>place', 140),
+  land('electric', 150),
+  land('states<br>avenue', 140),
+  land('virginia<br>avenue', 160),
+  land('pennslyvania<br>railroad', 200),
+  land('st. james<br>place', 180),
+  land('community\nchest'),
+  land('tennessee<br>avenue', 180),
+  land('new york<br>avenue', 200),
+  land('free\nparking'),
+  land('kentucky<br>avenue', 220),
+  land('chance'),
+  land('indiana<br>avenue', 220),
+  land('illinois<br>avenue', 240),
+  land('B.B.O<br>railroad', 200),
+  land('atlantic<br>avenue', 260),
+  land('venitor<br>avenue', 260),
+  land('water<br>works'),
+  land('marvin<br>gardens', 280),
+  land('go to<br>jail'),
+  land('pacific<br>avenue', 300),
+  land('north carolina<br>avenue', 300),
+  land('chest'),
+  land('pennslyvania<br>avenue', 320),
+  land('short line<br>railroad', 200),
+  land('chance'),
+  land('park<br>place', 350),
+  land('luxury tax'),
+  land('boardwalk', 400)
+];
 
 //game starts here
 while(playerStat.length < players){
