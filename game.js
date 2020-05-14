@@ -140,7 +140,7 @@ function turn(){
   else if(turnPart === 2){
     switch(targetPlayer){
       case 1:
-        playerStat[PlayerTurn].money += 200;
+        playerStat[playerTurn].money += 200;
       break;
       case 3, 18, 34:
         chest();
