@@ -19,10 +19,11 @@ document.body.appendChild(board);
 
 var exit = document.createElement('button');
 exit.innerHTML = 'close';
-exit.setAttribute('onclick','document.getElementById("board").remove()');
+exit.setAttribute('onclick','document.getElementById("board").remove(); document.getElementById("monopolyScript").remove();');
 exit.style.top = boardHeight / 11;
 exit.style.left = boardHeight / 11;
-exit.style.position = 'fixed';
+exit.style.position = 'absolute';
+exit.style.zIndex = 999;
 document.getElementById("board").appendChild(exit);
 
 var dice = document.createElement('div');
@@ -31,15 +32,24 @@ dice.style.height = '10%';
 dice.style.top = "40%";
 dice.style.left = "30%";
 dice.style.position = 'absolute';
-dice.innerHTML = "<div id='d1' style='border: 1px solid black; width:50%; height:100%;'>0</div><div id='d2' style='border: 1px solid black; width:50%; height:100%;'>0</div>";
+dice.innerHTML = "<div id='d1' style='border: 1px solid black; width:49%; height:99%; text-align:center;'>0</div><div id='d2' style='border: 1px solid black; width:49%; height:99%; text-align:center;'>0</div>";
 document.getElementById("board").appendChild(dice);
+
+var rollButton = document.createElement('button');
+rollButton.innerHTML = 'roll';
+rollButton.setAttribute('onclick', 'rollDice()');
+rollButton.id='rollButton';
+rollButton.style.position = 'absolute';
+rollButton.style.top = '50%';
+rollButton.style.left = '40%';
+document.getElementById("board").appendChild(rollButton);
 
 
 //variables & functions
 var i = 1;
 var playerStat = [
   {
-    money: 1880,
+    money: 1480,
     position: 1
   }
 ];
@@ -49,6 +59,11 @@ var turnPart = 0;
 var targetPlayer;
 var diceValue = [0, 0];
 
+function rollDice(){
+  document.getElementById('d1').innerHTML = Math.floor((Math.random() * 6) + 1);
+  document.getElementById('d2').innerHTML = Math.floor((Math.random() * 6) + 1);
+  document.getElementById('rollButton').disabled = true;
+}
 function land (name, price){
   var square = document.createElement('div');
   square.id = i;
@@ -127,7 +142,7 @@ function squareStyle(){
   
   x = x.toString();
   y = y.toString();
-  var stylishSquares = "width:" + betterMath(boardWidth / 11) + "px; height:" + betterMath(boardHeight / 11) + "px; border:1px solid black; position:absolute; top:" + y +"; left:" + x + ";";
+  var stylishSquares = "width:" + betterMath(boardWidth / 11) + "px; height:" + betterMath(boardHeight / 11) + "px; border:1px solid black; position:absolute; top:" + y +"; left:" + x + "; zIndex:1;";
   
   return stylishSquares;
 }
@@ -234,6 +249,6 @@ var properties = {
 
 //game starts here
 while(playerStat.length < players){
-  playerStat.push({money: 1880, position: 1});
+  playerStat.push({money: 1480, position: 1});
 }
 
