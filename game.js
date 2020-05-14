@@ -1,9 +1,13 @@
 alert('loaded successfully');
 
+//for scaling, DO NOT CHANGE, it will break
+const boardWidth = window.innerWidth;
+const boardHeight = window.innerHeight;
+
 var board = document.createElement('div');
 board.id="board";
-board.style.width='100%';
-board.style.height='100%';
+board.style.width=boardWidth;
+board.style.height=boardHeight;
 board.style.top="0px";
 board.style.left="0px";
 board.style.position = 'fixed';
@@ -50,8 +54,6 @@ var players = prompt('how many players?', 1);
 var playerTurn = 0;
 var turnPart = 0;
 var targetPlayer;
-const boardWidth = document.getElementById('board').width;
-const boardHeight = document.getElementById('board').height;
 
 function rollDice(){
   document.getElementById('d1').innerHTML = Math.floor((Math.random() * 6) + 1);
