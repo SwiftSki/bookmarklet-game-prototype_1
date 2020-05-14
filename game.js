@@ -4,8 +4,8 @@ alert('loaded successfully');
 const boardWidth  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 const boardHeight = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
 
-console.log(boardWidth);
-console.log(boardHeight);
+//console.log(boardWidth);
+//console.log(boardHeight);
 
 var board = document.createElement('div');
 board.id="board";
@@ -128,10 +128,14 @@ function turn(){
     buildings();
     trade();
     turnPart++;
+    console.log('turn part 1 done');
+    turn();
   }
   else if(turnPart === 1){
     move();
     turnPart++;
+    console.log('turn part 2 done');
+    turn();
   }
   else if(turnPart === 2){
     switch(targetPlayer){
@@ -159,6 +163,7 @@ function turn(){
         }
       break;
     }
+  console.log('turn part 3 done');
   turnPart = 0;
   }
 }
