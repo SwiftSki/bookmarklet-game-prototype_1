@@ -195,8 +195,14 @@ function turn(){
     turn();
   }
   else{
-    playerTurn++;
-    turn();
+    if(playerTurn < playerStat.length){
+      playerTurn++;
+      turn();
+    }
+    else{
+      playerTurn = 0;
+      turn();
+    }
   }
   document.getElementById('rollButton').disabled = false;
 }
@@ -207,7 +213,12 @@ function trade(){
 
 }
 function move(){
-  
+  if(document.getElementById('d1').innerHTML + document.getElementById('d2').innerHTML + playerStat[playerTurn].position <= 40){
+    playerStat[playerTurn].position += document.getElementById('d1').innerHTML + document.getElementById('d2').innerHTML;
+  }
+  else{
+    playerStat[playerTurn].position += document.getElementById('d1').innerHTML + document.getElementById('d2').innerHTML - 40;
+  }
 }
 function buy(){
 
