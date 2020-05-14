@@ -1,16 +1,9 @@
 alert('loaded successfully');
 
-//for the purpose of scaling....
-const boardWidth  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-const boardHeight = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
-
-//console.log(boardWidth);
-//console.log(boardHeight);
-
 var board = document.createElement('div');
 board.id="board";
-board.style.width=boardWidth;
-board.style.height=boardHeight;
+board.style.width='100%';
+board.style.height='100%';
 board.style.top="0px";
 board.style.left="0px";
 board.style.position = 'fixed';
@@ -57,7 +50,8 @@ var players = prompt('how many players?', 1);
 var playerTurn = 0;
 var turnPart = 0;
 var targetPlayer;
-var diceValue = [0, 0];
+var boardWidth = document.getElementById('board').width;
+var boardHeight = document.getElementById('board').height;
 
 function rollDice(){
   document.getElementById('d1').innerHTML = Math.floor((Math.random() * 6) + 1);
@@ -84,30 +78,30 @@ function land (name, price){
   return [name, price, 0, undefined];
 }
 function GO (){
-  alert('collect $200');
+  console.log('collect $200');
 }
 function chest (){
-  alert('community chest!');
+  console.log('community chest!');
 }
 function chance(){
-  alert('chance!');
+  console.log('chance!');
 }
 function tax(type){
   if(type === "income"){
-    alert('income tax');
+    console.log('income tax');
   }
   else if(type === "luxury"){
-    alert('luxury tax');
+    console.log('luxury tax');
   }
 }
 function jail(){
-  alert('in jail');
+  console.log('in jail');
 }
 function parking(){
-  alert('free parking!');
+  console.log('free parking!');
 }
 function goJail(){
-  alert('go to jail');
+  console.log('go to jail');
 }
 function betterMath(x){
   return x;
@@ -148,6 +142,7 @@ function squareStyle(){
   return stylishSquares;
 }
 function turn(){
+  console.log(playerTurn);
   targetPlayer = playerStat[playerTurn].position;
   if(turnPart === 0){
     buildings();
@@ -192,16 +187,14 @@ function turn(){
   turnPart = 0;
   }
   if(document.getElementById('d1').innerHTML === document.getElementById('d2').innerHTML){
-    turn();
+    playerTurn = playerTurn;
   }
   else{
     if(playerTurn < playerStat.length){
       playerTurn++;
-      turn();
     }
     else{
       playerTurn = 0;
-      turn();
     }
   }
   document.getElementById('rollButton').disabled = false;
