@@ -29,6 +29,16 @@ document.body.appendChild(exit);
 
 //variables & functions
 var i = 1;
+var playerStat = [
+  {
+    money: 1880,
+    position: 1
+  }
+];
+var players = prompt('how many players?', 1);
+var playerturn = 0;
+var turnPart = 0;
+var targetPlayer;
 
 function land (name, price){
   var square = document.createElement('div');
@@ -46,7 +56,7 @@ function land (name, price){
 //  console.log(name + ' drawn');
   
   i++;
-  return [name, price, 0, ' '];
+  return [name, price, 0, undefined];
 }
 function GO (){
   alert('collect $200');
@@ -112,16 +122,67 @@ function squareStyle(){
   
   return stylishSquares;
 }
+function turn(){
+  targetPlayer = playerStat[playerTurn].position;
+  if(turnPart === 0){
+    buildings();
+    trade();
+    turnPart++;
+  }
+  else if(turnPart === 1){
+    move();
+    turnPart++;
+  }
+  else if(){
+    switch(targetPlayer){
+      case 1:
+        playerStat[PlayerTurn].money += 200;
+      break;
+      case 3, 18, 34:
+        chest();
+      break;
+      case 5:
+        tax("income");
+      break;
+      case 8, 23, 37:
+        chance();
+      break;
+      case 39:
+        tax("luxury");
+      break;
+      default:
+        if(properties.targetPlayer[2] === undefined){
+          alert(buy);
+        }
+        else{
+          alert('pay');
+        }
+      break;
+    }
+  }
+}
+function buildings(){
+  
+}
+function trade(){
+
+}
+function move(){
+  
+}
+function buy(){
+
+}
 
 var properties = {
   1  : land('go'),
   2  : land('mediterranian<br>avenue', 60),
-  3  : land('chest'),
+  3  : land('community\nchest'),
   4  : land('baltic<br>avenue', 60),
   5  : land('income tax'),
   6  : land('reading<br>railroad', 200),
   7  : land('oriental<br>avenue', 100),
-  7  : land('chance'),
+  8  : land('chance'),
   9  : land('vermont<br>avenue', 100),
   10 : land('conneticu<br>avenue', 120),
   11 : land('jail'),
@@ -131,10 +192,10 @@ var properties = {
   15 : land('virginia<br>avenue', 160),
   16 : land('pennslyvania<br>railroad', 200),
   17 : land('st. james<br>place', 180),
-  18 : land('chest'),
+  18 : land('community\nchest'),
   19 : land('tennessee<br>avenue', 180),
   20 : land('new york<br>avenue', 200),
-  21 : land('parking'),
+  21 : land('free\nparking'),
   22 : land('kentucky<br>avenue', 220),
   23 : land('chance'),
   24 : land('indiana<br>avenue', 220),
@@ -156,11 +217,8 @@ var properties = {
   40 : land('boardwalk', 400)
 };
 
-alert('done drawing,\nstarting game\n\u3020');
-
 //game starts here
-var money = [1480];
-var players = prompt('how many players?', 1);
-while(money.length < players){
-  money.push(1480);
+while(playerStat.length < players){
+  playerStat.push({money: 1880, position: 1});
 }
+
