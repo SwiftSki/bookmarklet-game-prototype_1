@@ -50,8 +50,8 @@ var players = prompt('how many players?', 1);
 var playerTurn = 0;
 var turnPart = 0;
 var targetPlayer;
-var boardWidth = document.getElementById('board').width;
-var boardHeight = document.getElementById('board').height;
+const boardWidth = document.getElementById('board').width;
+const boardHeight = document.getElementById('board').height;
 
 function rollDice(){
   document.getElementById('d1').innerHTML = Math.floor((Math.random() * 6) + 1);
