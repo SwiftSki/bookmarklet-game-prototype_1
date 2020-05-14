@@ -17,14 +17,22 @@ board.style.position = 'fixed';
 board.style.background="rgba(150,220,255,0.9)";
 document.body.appendChild(board);
 
-
 var exit = document.createElement('button');
 exit.innerHTML = 'close';
 exit.setAttribute('onclick','document.getElementById("board").remove()');
 exit.style.top = boardHeight / 11;
 exit.style.left = boardHeight / 11;
 exit.style.position = 'fixed';
-document.body.appendChild(exit);
+document.getElementById("board").appendChild(exit);
+
+var dice = document.createElement('div');
+dice.style.width = '20%';
+dice.style.height = '10%';
+dice.style.top = "40%";
+dice.style.left = "30%";
+dice.style.position = 'absolute';
+dice.innerHTML = "<div id='d1' style='border: 1px solid black; width:50%; height:100%;'>0</div><div id='d2' style='border: 1px solid black; width:50%; height:100%;'>0</div>";
+document.getElementById("board").appendChild(dice);
 
 
 //variables & functions
@@ -39,6 +47,7 @@ var players = prompt('how many players?', 1);
 var playerTurn = 0;
 var turnPart = 0;
 var targetPlayer;
+var diceValue = [0, 0];
 
 function land (name, price){
   var square = document.createElement('div');
