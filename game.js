@@ -63,6 +63,7 @@ function rollDice(){
   document.getElementById('d1').innerHTML = Math.floor((Math.random() * 6) + 1);
   document.getElementById('d2').innerHTML = Math.floor((Math.random() * 6) + 1);
   document.getElementById('rollButton').disabled = true;
+  turn();
 }
 function land (name, price){
   var square = document.createElement('div');
@@ -190,6 +191,14 @@ function turn(){
   console.log('turn part 3 done');
   turnPart = 0;
   }
+  if(document.getElementById('d1').innerHTML === document.getElementById('d2').innerHTML){
+    turn();
+  }
+  else{
+    playerTurn++;
+    turn();
+  }
+  document.getElementById('rollButton').disabled = false;
 }
 function buildings(){
   
