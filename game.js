@@ -133,7 +133,7 @@ function turn(){
     move();
     turnPart++;
   }
-  else if(){
+  else if(turnPart === 2){
     switch(targetPlayer){
       case 1:
         playerStat[PlayerTurn].money += 200;
@@ -159,6 +159,7 @@ function turn(){
         }
       break;
     }
+  turnPart = 0;
   }
 }
 function buildings(){
