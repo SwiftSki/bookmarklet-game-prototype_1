@@ -177,11 +177,11 @@ function turn(){
         tax("luxury");
       break;
       default:
-        if(properties[targetPlayer][2] === undefined){
-          alert(buy);
+        if(properties[targetPlayer][3] === undefined){
+          console.log(buy);
         }
         else{
-          alert('pay');
+          console.log('pay');
         }
       break;
     }
