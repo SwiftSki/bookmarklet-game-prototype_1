@@ -190,6 +190,7 @@ function turn(){
   }
   if(document.getElementById('d1').innerHTML === document.getElementById('d2').innerHTML){
     playerTurn = playerTurn;
+    console.log('193, ' + playerTurn);
   }
   else{
     if(playerTurn < playerStat.length){
@@ -200,6 +201,7 @@ function turn(){
     }
   }
   document.getElementById('rollButton').disabled = false;
+  console.log(playerTurn);
 }
 function buildings(){
   
