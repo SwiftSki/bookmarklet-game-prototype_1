@@ -36,7 +36,7 @@ var playerStat = [
   }
 ];
 var players = prompt('how many players?', 1);
-var playerturn = 0;
+var playerTurn = 0;
 var turnPart = 0;
 var targetPlayer;
 
