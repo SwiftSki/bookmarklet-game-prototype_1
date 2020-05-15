@@ -213,8 +213,15 @@ function turn(){
     while(output.length < playerStat.length){
       output.push('player ' + j + ': $' + playerStat[j].money + ', position: ' + properties[playerStat[j].position][0] + '<br>');
       j++;
+      
+      console.log('output loop:');
+      console.log('j: ' + j);
+      console.log('playerTurn: ' + playerTurn);
+      console.log('output length: ' + output.length);
     }
+    console.log(output);
     output = output.toString();
+    console.log(output);
     out1.innerHTML = output;
     document.getElementById('control').appendChild(out1);
     output = "";
