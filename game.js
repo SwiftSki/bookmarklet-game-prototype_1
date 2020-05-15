@@ -147,9 +147,11 @@ function squareStyle(){
   return stylishSquares;
 }
 function turn(){
+  /*
   if(playerTurn >= playerStat.length){
     playerTurn = 0;
   }
+  */
   console.log(playerTurn);
   targetPlayer = playerStat[playerTurn].position;
   if(turnPart === 0){
@@ -199,7 +201,7 @@ function turn(){
     console.log('193, ' + playerTurn);
   }
   else{
-    if(playerTurn < playerStat.length){
+    if(playerTurn < playerStat.length + 1){
       playerTurn++;
     }
     else{
