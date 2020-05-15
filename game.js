@@ -245,7 +245,6 @@ function buy(){
 }
 
 drawBoard();
-drawBoard();
 var properties = [
   land('go'),
   land('mediterranian avenue', 60),
