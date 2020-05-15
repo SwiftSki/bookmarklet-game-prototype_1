@@ -219,6 +219,7 @@ function turn(){
     document.getElementById('control').appendChild(out1);
     output = "";
     output = output.split("");
+    j = 0;
   }
   document.getElementById('rollButton').disabled = false;
   console.log(playerTurn);
