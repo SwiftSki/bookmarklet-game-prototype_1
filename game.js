@@ -153,7 +153,7 @@ function squareStyle(){
   return stylishSquares;
 }
 function turn(){
-  if(playerTurn > playerStat.length){
+  if(playerTurn > playerStat.length - 1){
     playerTurn = 0;
   }
   
