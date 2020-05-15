@@ -39,8 +39,8 @@ function drawBoard(){
   control.id = 'control';
   control.style.width = '30%';
   control.style.height = '30%';
-  control.style.top = '30%';
-  control.style.left = '30%';
+  control.style.top = '20%';
+  control.style.left = '50%';
   control.style.position = 'absolute';
   document.getElementById('board').appendChild(control);
 
@@ -93,7 +93,7 @@ function land (name, price){
 //  console.log(name + ' drawn');
   
   i++;
-  return [name, price, 0, undefined];
+  return [name, price, 0, undefined, betterMath(price / 10) - 4];
 }
 function chest (){
   console.log('community chest!');
@@ -197,6 +197,35 @@ function turn(){
         }
         else{
           console.log('pay');
+          switch(){
+                 case 0:
+                  playerStat[playerTurn].money -= properties[playerStat[playerTurn].position][4];
+                  playerStat[properties[playerStat[playerTurn].position][3]].money += properties[playerStat[playerTurn].position][4];
+                 break;
+                 case 1:
+                  playerStat[playerTurn].money -= properties[playerStat[playerTurn].position][4] * 5;
+                  playerStat[properties[playerStat[playerTurn].position][3]].money += properties[playerStat[playerTurn].position][4] * 5;
+                 break;
+                 case 2:
+                  playerStat[playerTurn].money -= properties[playerStat[playerTurn].position][4] * 12.5;
+                  playerStat[properties[playerStat[playerTurn].position][3]].money += properties[playerStat[playerTurn].position][4] * 12.5;
+                 break;
+                 case 3:
+                  playerStat[playerTurn].money -= properties[playerStat[playerTurn].position][4] * 37.5;
+                  playerStat[properties[playerStat[playerTurn].position][3]].money += properties[playerStat[playerTurn].position][4] * 37.5;
+                 break;
+                 case 4;
+                  playerStat[playerTurn].money -= properties[playerStat[playerTurn].position][4] * 56.25;
+                  playerStat[properties[playerStat[playerTurn].position][3]].money += properties[playerStat[playerTurn].position][4] * 56.25;
+                 break;
+                 case 5:
+                  playerStat[playerTurn].money -= properties[playerStat[playerTurn].position][4] * 75;
+                  playerStat[properties[playerStat[playerTurn].position][3]].money += properties[playerStat[playerTurn].position][4] * 75;
+                 break;
+                 default:
+                  throw('NOT A VALID NUMBERR OF HOUSES');
+                 break;
+          }
         }
       break;
     }
