@@ -1,9 +1,5 @@
 alert('loaded successfully');
 
-//for scaling, DO NOT CHANGE, it will break
-const boardWidth = window.innerWidth;
-const boardHeight = window.innerHeight;
-
 var board = document.createElement('div');
 board.id="board";
 board.style.width=boardWidth;
@@ -13,6 +9,15 @@ board.style.left="0px";
 board.style.position = 'fixed';
 board.style.background="rgba(150,220,255,0.9)";
 document.body.appendChild(board);
+
+var control = document.createElement('div');
+control.id = 'control';
+control.style.width = '30%';
+control.style.height = '30%';
+control.style.top = '30%';
+control.style.left = '30%';
+control.style.position = 'absolute';
+document.getElementById('board').appendChild(control);
 
 var exit = document.createElement('button');
 exit.innerHTML = 'close';
@@ -44,6 +49,9 @@ document.getElementById("board").appendChild(rollButton);
 
 //variables & functions
 var i = 1;
+var j = 0;
+var boardWidth = window.innerWidth;
+var boardHeight = window.innerHeight;
 var playerStat = [
   {
     money: 1480,
@@ -54,7 +62,6 @@ var players = prompt('how many players?', 1);
 var playerTurn = 0;
 var turnPart = 0;
 var targetPlayer;
-
 var d1;
 var d2;
 
@@ -147,11 +154,6 @@ function squareStyle(){
   return stylishSquares;
 }
 function turn(){
-  /*
-  if(playerTurn >= playerStat.length){
-    playerTurn = 0;
-  }
-  */
   console.log(playerTurn);
   targetPlayer = playerStat[playerTurn].position;
   if(turnPart === 0){
@@ -206,6 +208,10 @@ function turn(){
     }
     else{
       playerTurn = 0;
+    }
+    
+    while(document.getElementById('control').innerHTML.split('<br>') < playerStat.length - 1){
+      document.getElementById('control').appendChild('player' + j + ': $' + playerStat[j].money + ', position: ' + properties[playerStat[j].position][0]);
     }
   }
   document.getElementById('rollButton').disabled = false;
