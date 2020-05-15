@@ -64,6 +64,7 @@ var turnPart = 0;
 var targetPlayer;
 var d1;
 var d2;
+var output = [];
 
 function rollDice(){
   document.getElementById('d1').innerHTML = Math.floor((Math.random() * 6) + 1);
@@ -210,9 +211,15 @@ function turn(){
       playerTurn = 0;
     }
     
+    output.push('<p>');
     while(document.getElementById('control').innerHTML.split('<br>') < playerStat.length - 1){
-      document.getElementById('control').appendChild('player' + j + ': $' + playerStat[j].money + ', position: ' + properties[playerStat[j].position][0]);
+      output.push('player' + j + ': $' + playerStat[j].money + ', position: ' + properties[playerStat[j].position][0] + '<br>');
     }
+    output.push('</p>');
+    output = output.toString();
+    document.getElementById('control').appendChild(output);
+    output = "";
+    output = output.split("");
   }
   document.getElementById('rollButton').disabled = false;
   console.log(playerTurn);
