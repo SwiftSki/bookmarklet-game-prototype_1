@@ -214,7 +214,7 @@ function trade(){
 }
 function move(){
   d1 = +document.getElementById('d1').innerHTML;
-  d1 = +document.getElementById('d2').innerHTML;
+  d2 = +document.getElementById('d2').innerHTML;
   
   if(d1 + d2 + playerStat[playerTurn].position <= 40){
     playerStat[playerTurn].position += d1 + d2;
