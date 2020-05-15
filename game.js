@@ -1,52 +1,5 @@
 alert('loaded successfully');
 
-var board = document.createElement('div');
-board.id="board";
-board.style.width=boardWidth;
-board.style.height=boardHeight;
-board.style.top="0px";
-board.style.left="0px";
-board.style.position = 'fixed';
-board.style.background="rgba(150,220,255,0.9)";
-document.body.appendChild(board);
-
-var control = document.createElement('div');
-control.id = 'control';
-control.style.width = '30%';
-control.style.height = '30%';
-control.style.top = '30%';
-control.style.left = '30%';
-control.style.position = 'absolute';
-document.getElementById('board').appendChild(control);
-
-var exit = document.createElement('button');
-exit.innerHTML = 'close';
-exit.setAttribute('onclick','document.getElementById("board").remove(); document.getElementById("monopolyScript").remove();');
-exit.style.top = boardHeight / 11;
-exit.style.left = boardHeight / 11;
-exit.style.position = 'absolute';
-exit.style.zIndex = 999;
-document.getElementById("board").appendChild(exit);
-
-var dice = document.createElement('div');
-dice.style.width = '20%';
-dice.style.height = '10%';
-dice.style.top = "40%";
-dice.style.left = "30%";
-dice.style.position = 'absolute';
-dice.innerHTML = "<div id='d1' style='border: 1px solid black; width:49%; height:99%; text-align:center;'>0</div><div id='d2' style='border: 1px solid black; width:49%; height:99%; text-align:center;'>0</div>";
-document.getElementById("board").appendChild(dice);
-
-var rollButton = document.createElement('button');
-rollButton.innerHTML = 'roll';
-rollButton.setAttribute('onclick', 'rollDice()');
-rollButton.id='rollButton';
-rollButton.style.position = 'absolute';
-rollButton.style.top = '50%';
-rollButton.style.left = '40%';
-document.getElementById("board").appendChild(rollButton);
-
-
 //variables & functions
 var i = 1;
 var j = 0;
@@ -67,6 +20,53 @@ var d2;
 var output = [];
 var out1 = document.createElement('p');
 
+function drawBoard(){
+  var board = document.createElement('div');
+  board.id="board";
+  board.style.width=boardWidth;
+  board.style.height=boardHeight;
+  board.style.top="0px";
+  board.style.left="0px";
+  board.style.position = 'fixed';
+  board.style.background="rgba(150,220,255,0.9)";
+  document.body.appendChild(board);
+
+  var control = document.createElement('div');
+  control.id = 'control';
+  control.style.width = '30%';
+  control.style.height = '30%';
+  control.style.top = '30%';
+  control.style.left = '30%';
+  control.style.position = 'absolute';
+  document.getElementById('board').appendChild(control);
+
+  var exit = document.createElement('button');
+  exit.innerHTML = 'close';
+  exit.setAttribute('onclick','document.getElementById("board").remove(); document.getElementById("monopolyScript").remove();');
+  exit.style.top = boardHeight / 11;
+  exit.style.left = boardHeight / 11;
+  exit.style.position = 'absolute';
+  exit.style.zIndex = 999;
+  document.getElementById("board").appendChild(exit);
+
+  var dice = document.createElement('div');
+  dice.style.width = '20%';
+  dice.style.height = '10%';
+  dice.style.top = "40%";
+  dice.style.left = "30%";
+  dice.style.position = 'absolute';
+  dice.innerHTML = "<div id='d1' style='border: 1px solid black; width:49%; height:99%; text-align:center;'>0</div><div id='d2' style='border: 1px solid black; width:49%; height:99%; text-align:center;'>0</div>";
+  document.getElementById("board").appendChild(dice);
+
+  var rollButton = document.createElement('button');
+  rollButton.innerHTML = 'roll';
+  rollButton.setAttribute('onclick', 'rollDice()');
+  rollButton.id='rollButton';
+  rollButton.style.position = 'absolute';
+  rollButton.style.top = '50%';
+  rollButton.style.left = '40%';
+  document.getElementById("board").appendChild(rollButton);
+}
 function rollDice(){
   document.getElementById('d1').innerHTML = Math.floor((Math.random() * 6) + 1);
   document.getElementById('d2').innerHTML = Math.floor((Math.random() * 6) + 1);
@@ -153,6 +153,10 @@ function squareStyle(){
   return stylishSquares;
 }
 function turn(){
+  if(playerTurn > playerStat.length){
+    playerTurn = 0;
+  }
+  
   console.log(playerTurn);
   targetPlayer = playerStat[playerTurn].position;
   if(turnPart === 0){
@@ -240,6 +244,8 @@ function buy(){
 
 }
 
+drawBoard();
+drawBoard();
 var properties = [
   land('go'),
   land('mediterranian avenue', 60),
