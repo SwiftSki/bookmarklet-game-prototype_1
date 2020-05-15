@@ -55,6 +55,9 @@ var playerTurn = 0;
 var turnPart = 0;
 var targetPlayer;
 
+var d1 = +document.getElementById('d1').innerHTML;
+var d2 = +document.getElementById('d2').innerHTML;
+
 function rollDice(){
   document.getElementById('d1').innerHTML = Math.floor((Math.random() * 6) + 1);
   document.getElementById('d2').innerHTML = Math.floor((Math.random() * 6) + 1);
@@ -188,7 +191,7 @@ function turn(){
   console.log('turn part 3 done');
   turnPart = 0;
   }
-  if(document.getElementById('d1').innerHTML === document.getElementById('d2').innerHTML){
+  if(d1 === d2){
     playerTurn = playerTurn;
     console.log('193, ' + playerTurn);
   }
@@ -210,11 +213,11 @@ function trade(){
 
 }
 function move(){
-  if(document.getElementById('d1').innerHTML + document.getElementById('d2').innerHTML + playerStat[playerTurn].position <= 40){
-    playerStat[playerTurn].position += document.getElementById('d1').innerHTML + document.getElementById('d2').innerHTML;
+  if(d1 + d2 + playerStat[playerTurn].position <= 40){
+    playerStat[playerTurn].position += d1 + d2;
   }
   else{
-    playerStat[playerTurn].position += document.getElementById('d1').innerHTML + document.getElementById('d2').innerHTML - 40;
+    playerStat[playerTurn].position += d1 + d2 - 40;
   }
 }
 function buy(){
