@@ -147,6 +147,9 @@ function squareStyle(){
   return stylishSquares;
 }
 function turn(){
+  if(playerTurn >= playerStat.length){
+    playerTurn = 0;
+  }
   console.log(playerTurn);
   targetPlayer = playerStat[playerTurn].position;
   if(turnPart === 0){
