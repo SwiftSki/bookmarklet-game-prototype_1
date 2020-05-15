@@ -212,7 +212,7 @@ function turn(){
       playerTurn = 0;
     }
     
-    while(document.getElementById('control').innerHTML.split('<br>') < playerStat.length){
+    while(output.length < playerStat.length){
       output.push('player' + j + ': $' + playerStat[j].money + ', position: ' + properties[playerStat[j].position][0] + '<br>');
     }
     output = output.toString();
