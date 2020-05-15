@@ -79,7 +79,7 @@ function land (name, price){
   square.style = squareStyle();
   
   if(price !== undefined){
-    square.innerHTML = name + '<br><br>' + price;
+    square.innerHTML = name + '<br>' + price;
   }
   else{
     square.innerHTML = name;
@@ -90,9 +90,6 @@ function land (name, price){
   
   i++;
   return [name, price, 0, undefined];
-}
-function GO (){
-  console.log('collect $200');
 }
 function chest (){
   console.log('community chest!');
@@ -173,9 +170,6 @@ function turn(){
   }
   else if(turnPart === 2){
     switch(targetPlayer){
-      case 1:
-        playerStat[playerTurn].money += 200;
-      break;
       case 3, 18, 34:
         chest();
       break;
@@ -213,7 +207,7 @@ function turn(){
     }
     
     while(output.length < playerStat.length){
-      output.push('player' + j + ': $' + playerStat[j].money + ', position: ' + properties[playerStat[j].position][0] + '<br>');
+      output.push('player ' + j + ': $' + playerStat[j].money + ', position: ' + properties[playerStat[j].position][0] + '<br>');
     }
     output = output.toString();
     out1.innerHTML = output;
@@ -239,6 +233,7 @@ function move(){
   }
   else{
     playerStat[playerTurn].position += d1 + d2 - 40;
+    playerStat[playerTurn].money += 200;
   }
 }
 function buy(){
