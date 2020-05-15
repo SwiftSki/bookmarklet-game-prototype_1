@@ -19,7 +19,11 @@ var d1;
 var d2;
 var output = [];
 var out1 = document.createElement('p');
+var wantToPay;
 
+function drawPlayers(){
+  
+}
 function drawBoard(){
   var board = document.createElement('div');
   board.id="board";
@@ -188,7 +192,8 @@ function turn(){
       break;
       default:
         if(properties[targetPlayer][3] === undefined){
-          console.log(buy);
+          console.log('buy');
+          buy();
         }
         else{
           console.log('pay');
@@ -246,7 +251,18 @@ function move(){
   }
 }
 function buy(){
-
+  if(playerStat[playerTurn].money >= properties[playerStat[playerTurn].position][1]){
+    wantToPay = confirm('would you like to buy ' + properties[playerStat[playerTurn].position][0]);
+  }
+  else{
+    wantToPay = false;
+  }
+  
+  if(wantToPay === true){
+    playerStat[playerTurn].money -= properties[playerStat[playerTurn].position][1];
+    properties[playerStat[playerTurn].position][3] = playerTurn;
+  }
+  wantToPay = undefined;
 }
 
 drawBoard();
