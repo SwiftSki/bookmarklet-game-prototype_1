@@ -65,6 +65,7 @@ var targetPlayer;
 var d1;
 var d2;
 var output = [];
+var out1 = document.createElement('p');
 
 function rollDice(){
   document.getElementById('d1').innerHTML = Math.floor((Math.random() * 6) + 1);
@@ -211,13 +212,12 @@ function turn(){
       playerTurn = 0;
     }
     
-    output.push('<p>');
     while(document.getElementById('control').innerHTML.split('<br>') < playerStat.length - 1){
       output.push('player' + j + ': $' + playerStat[j].money + ', position: ' + properties[playerStat[j].position][0] + '<br>');
     }
-    output.push('</p>');
     output = output.toString();
-    document.getElementById('control').appendChild(output);
+    out1.innerHTML = output;
+    document.getElementById('control').appendChild(out1);
     output = "";
     output = output.split("");
   }
