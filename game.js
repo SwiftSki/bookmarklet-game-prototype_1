@@ -195,32 +195,34 @@ function turn(){
         }
       break;
     }
-  console.log('turn part 3 done');
-  turnPart = 0;
-  }
-  if(d1 === d2){
-    playerTurn = playerTurn;
-    console.log('doubles!');
-  }
-  else{
-    if(playerTurn < playerStat.length + 1){
-      playerTurn++;
+    turnPart = 0;
+  
+    if(d1 === d2){
+      playerTurn = playerTurn;
+      console.log('doubles!');
     }
     else{
-      playerTurn = 0;
+      if(playerTurn < playerStat.length + 1){
+        playerTurn++;
+      }
+      else{
+        playerTurn = 0;
+      }
+      console.log(playerTurn);
+
+      while(output.length < playerStat.length){
+        output.push('player ' + j + ': $' + playerStat[j].money + ', position: ' + properties[playerStat[j].position][0] + '<br>');
+        j++;
+      }
+      output = output.toString();
+      out1.innerHTML = output;
+      document.getElementById('control').appendChild(out1);
+      output = "";
+      output = output.split("");
+      j = 0;
+
+      console.log('turn part 3 done');
     }
-    console.log(playerTurn);
-    
-    while(output.length < playerStat.length){
-      output.push('player ' + j + ': $' + playerStat[j].money + ', position: ' + properties[playerStat[j].position][0] + '<br>');
-      j++;
-    }
-    output = output.toString();
-    out1.innerHTML = output;
-    document.getElementById('control').appendChild(out1);
-    output = "";
-    output = output.split("");
-    j = 0;
   }
   document.getElementById('rollButton').disabled = false;
   console.log(playerTurn);
