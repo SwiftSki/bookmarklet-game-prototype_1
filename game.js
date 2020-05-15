@@ -212,6 +212,7 @@ function turn(){
     
     while(output.length < playerStat.length){
       output.push('player ' + j + ': $' + playerStat[j].money + ', position: ' + properties[playerStat[j].position][0] + '<br>');
+      j++;
     }
     output = output.toString();
     out1.innerHTML = output;
