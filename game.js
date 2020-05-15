@@ -8,7 +8,7 @@ var boardHeight = window.innerHeight;
 var playerStat = [
   {
     money: 1480,
-    position: 1
+    position: 0
   }
 ];
 var players = prompt('how many players?', 1);
@@ -241,11 +241,11 @@ function move(){
   d1 = +document.getElementById('d1').innerHTML;
   d2 = +document.getElementById('d2').innerHTML;
   
-  if(d1 + d2 + playerStat[playerTurn].position <= 40){
+  if(d1 + d2 + playerStat[playerTurn].position <= 39){
     playerStat[playerTurn].position += d1 + d2;
   }
   else{
-    playerStat[playerTurn].position += d1 + d2 - 40;
+    playerStat[playerTurn].position += d1 + d2 - 39;
     playerStat[playerTurn].money += 200;
   }
 }
