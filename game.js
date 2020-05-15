@@ -299,6 +299,6 @@ var properties = [
 
 //game starts here
 while(playerStat.length < players){
-  playerStat.push({money: 1480, position: 1});
+  playerStat.push({money: 1480, position: 0});
 }
 
