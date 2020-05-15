@@ -218,8 +218,8 @@ function turn(){
     output = output.toString();
     out1.innerHTML = output;
     document.getElementById('control').appendChild(out1);
-    output = "";
-    output = output.split("");
+//    output = "";
+//    output = output.split("");
   }
   document.getElementById('rollButton').disabled = false;
   console.log(playerTurn);
