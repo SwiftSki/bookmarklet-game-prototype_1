@@ -197,7 +197,7 @@ function turn(){
         }
         else{
           console.log('pay');
-          switch(){
+          switch(properties[playerStat[playerTurn].position][2]){
                  case 0:
                   playerStat[playerTurn].money -= properties[playerStat[playerTurn].position][4];
                   playerStat[properties[playerStat[playerTurn].position][3]].money += properties[playerStat[playerTurn].position][4];
