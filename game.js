@@ -83,7 +83,7 @@ function land (name, price){
   square.style = squareStyle();
   
   if(price !== undefined){
-    square.innerHTML = name + '<br>' + price;
+    square.innerHTML = name + '<br>' + price + '<svg style="width:100%; height:100%; position:absolute; top:0px; left:0px;" id="svg' + i + '"></svg>';
   }
   else{
     square.innerHTML = name + '<svg style="width:100%; height:100%; position:absolute; top:0px; left:0px;" id="svg' + i + '"></svg>';
