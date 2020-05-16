@@ -86,7 +86,7 @@ function land (name, price){
     square.innerHTML = name + '<br>' + price;
   }
   else{
-    square.innerHTML = name;
+    square.innerHTML = name + '<svg style="width:100%; height:100%; position:absolute; top:0px; left:0px pointer-events:none;" id="svg' + i + '"></svg>';
   }
   document.getElementById('board').appendChild(square);
 //  console.log(i);
@@ -214,7 +214,7 @@ function turn(){
                   playerStat[playerTurn].money -= properties[playerStat[playerTurn].position][4] * 37.5;
                   playerStat[properties[playerStat[playerTurn].position][3]].money += properties[playerStat[playerTurn].position][4] * 37.5;
                  break;
-                 case 4;
+                 case 4:
                   playerStat[playerTurn].money -= properties[playerStat[playerTurn].position][4] * 56.25;
                   playerStat[properties[playerStat[playerTurn].position][3]].money += properties[playerStat[playerTurn].position][4] * 56.25;
                  break;
