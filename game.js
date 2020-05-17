@@ -20,6 +20,7 @@ var d2;
 var output = [];
 var out1 = document.createElement('p');
 var wantToPay;
+//var character = document.createElement('circle');
 
 function drawPlayers(){
   
@@ -268,6 +269,7 @@ function trade(){
 
 }
 function move(){
+  
   d1 = +document.getElementById('d1').innerHTML;
   d2 = +document.getElementById('d2').innerHTML;
   
