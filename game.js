@@ -8,7 +8,8 @@ var boardHeight = window.innerHeight;
 var playerStat = [
   {
     money: 1480,
-    position: 0
+    position: 0,
+    color: '#000000'
   }
 ];
 var players = prompt('how many players?', 1);
@@ -20,10 +21,16 @@ var d2;
 var output = [];
 var out1 = document.createElement('p');
 var wantToPay;
-//var character = document.createElement('circle');
+var character = document.createElement('circle');
 
-function drawPlayers(){
-  
+function drawPlayer(){
+  character.cx = boardWidth / 22;
+  character.cy = boardHeight / 22'
+  character.r = '10';
+  character.stroke = playerStat[playerTurn].color;
+  character.stroke-width = 1;
+  character.fill = playerStat[playerTurn].color;
+  document.getElementById('svg' + playerStat[playerTurn].position).appendChild(character);
 }
 function drawBoard(){
   var board = document.createElement('div');
@@ -280,6 +287,7 @@ function move(){
     playerStat[playerTurn].position += d1 + d2 - 39;
     playerStat[playerTurn].money += 200;
   }
+  drawPlayer();
 }
 function buy(){
   if(playerStat[playerTurn].money >= properties[playerStat[playerTurn].position][1]){
@@ -342,6 +350,6 @@ var properties = [
 
 //game starts here
 while(playerStat.length < players){
-  playerStat.push({money: 1480, position: 0});
+  playerStat.push({money: 1480, position: 0, color: prompt('please insert color', '#0000ff')});
 }
 
