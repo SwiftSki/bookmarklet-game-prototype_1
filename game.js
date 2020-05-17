@@ -25,7 +25,7 @@ var character = document.createElement('circle');
 
 function drawPlayer(){
   character.cx = boardWidth / 22;
-  character.cy = boardHeight / 22'
+  character.cy = boardHeight / 22;
   character.r = '10';
   character.stroke = playerStat[playerTurn].color;
   character.stroke-width = 1;
