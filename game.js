@@ -32,7 +32,6 @@ function drawPlayer(){
   character.setAttribute('stroke-width', '1');
   character.setAttribute('fill', playerStat[playerTurn].color);
   document.getElementById('svg' + playerStat[playerTurn].position).appendChild(character);
-  character.setAttribute('fill', playerStat[playerTurn].color);
 }
 function drawBoard(){
   var board = document.createElement('div');
@@ -167,6 +166,8 @@ function squareStyle(){
   return stylishSquares;
 }
 function turn(){
+  drawPlayer();
+  
   if(playerTurn > playerStat.length - 1){
     playerTurn = 0;
   }
