@@ -24,8 +24,8 @@ var wantToPay;
 var character = document.createElement('circle');
 
 function drawPlayer(){
-  character.setAttribute('cx', betterMath(betterMath(boardWidth / 22).toString().split('.').pop()).toString());
-  character.setAttribute('cy', betterMath(betterMath(boardHeight / 22).toString().split('.').pop()).toString());
+  character.setAttribute('cx', betterMath(betterMath(boardWidth / 22).toString().split('.').shift()).toString());
+  character.setAttribute('cy', betterMath(betterMath(boardHeight / 22).toString().split('.').shift()).toString());
   character.setAttribute('r', '10');
   character.setAttribute('stroke', playerStat[playerTurn].color);
   character.setAttribute('stroke-width', '1');
