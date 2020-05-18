@@ -24,8 +24,8 @@ var wantToPay;
 var character = document.createElement('circle');
 
 function drawPlayer(){
-  character.cx = boardWidth / 22;
-  character.cy = boardHeight / 22;
+  character.cx = betterMath(boardWidth / 22).toString();
+  character.cy = betterMath(boardHeight / 22).toString();
   character.r = '10';
 //  character.stroke = playerStat[playerTurn].color;
 //  character.stroke-width = 1;
