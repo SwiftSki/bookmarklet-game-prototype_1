@@ -27,8 +27,8 @@ function drawPlayer(){
   character.cx = betterMath(boardWidth / 22).toString();
   character.cy = betterMath(boardHeight / 22).toString();
   character.r = '10';
-//  character.stroke = playerStat[playerTurn].color;
-//  character.stroke-width = 1;
+  character.stroke = playerStat[playerTurn].color;
+  character.setAttribute('stroke-width', '1');
   character.fill = playerStat[playerTurn].color;
   document.getElementById('svg' + playerStat[playerTurn].position).appendChild(character);
 }
