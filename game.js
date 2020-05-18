@@ -9,7 +9,7 @@ var playerStat = [
   {
     money: 1480,
     position: 0,
-    color: '#000000'
+    color: 'black'
   }
 ];
 var players = prompt('how many players?', 1);
