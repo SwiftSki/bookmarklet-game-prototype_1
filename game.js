@@ -31,7 +31,7 @@ function drawPlayer(){
   character.setAttribute('stroke', playerStat[playerTurn].color);
   character.setAttribute('stroke-width', '1');
   character.setAttribute('fill', playerStat[playerTurn].color);
-  document.getElementById('svg' + playerStat[playerTurn].position).appendChild(character);
+  document.getElementById('svg' + playerStat[playerTurn].position + 1).appendChild(character);
 }
 function drawBoard(){
   var board = document.createElement('div');
