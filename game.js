@@ -24,12 +24,12 @@ var wantToPay;
 var character = document.createElement('circle');
 
 function drawPlayer(){
-  character.cx = betterMath(boardWidth / 22).toString();
-  character.cy = betterMath(boardHeight / 22).toString();
-  character.r = '10';
-  character.stroke = playerStat[playerTurn].color;
+  character.setAttribute('cx', betterMath(boardWidth / 22).toString());
+  character.setAttribute('cy', betterMath(boardHeight / 22).toString());
+  character.setAttribute('r' =, '10');
+  character.setAttribute('stroke', playerStat[playerTurn].color);
   character.setAttribute('stroke-width', '1');
-  character.fill = playerStat[playerTurn].color;
+  character.setAttribute('fill', playerStat[playerTurn].color);
   document.getElementById('svg' + playerStat[playerTurn].position).appendChild(character);
 }
 function drawBoard(){
