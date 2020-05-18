@@ -24,6 +24,7 @@ var wantToPay;
 var character = document.createElement('circle');
 
 function drawPlayer(){
+  character.setAttribute('id', playerTurn.toString());
   character.setAttribute('cx', betterMath(betterMath(boardWidth / 22).toString().split('.').shift()).toString());
   character.setAttribute('cy', betterMath(betterMath(boardHeight / 22).toString().split('.').shift()).toString());
   character.setAttribute('r', '10');
