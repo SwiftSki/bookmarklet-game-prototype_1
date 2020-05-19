@@ -30,9 +30,8 @@ function drawPlayer(){
   character.setAttribute('r', '10');
   character.setAttribute('stroke', playerStat[playerTurn].color);
   character.setAttribute('stroke-width', '1');
-  character.setAttribute('fill', '#000001');
-  document.getElementById('svg' + playerStat[playerTurn].position + 1).appendChild(character);
   character.setAttribute('fill', playerStat[playerTurn].color);
+  document.getElementById('svg' + betterMath(playerStat[playerTurn].position).toString()).appendChild(character);
 }
 function drawBoard(){
   var board = document.createElement('div');
