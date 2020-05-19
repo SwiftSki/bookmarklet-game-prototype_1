@@ -167,7 +167,7 @@ function squareStyle(){
   return stylishSquares;
 }
 function turn(){
-//  drawPlayer();
+  drawPlayer();
   
   if(playerTurn > playerStat.length - 1){
     playerTurn = 0;
