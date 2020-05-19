@@ -21,9 +21,10 @@ var d2;
 var output = [];
 var out1 = document.createElement('p');
 var wantToPay;
-var character = document.createElement('circle');
+var character;
 
 function drawPlayer(){
+  character = document.createElement('circle');
   character.setAttribute('id', 'player' + playerTurn.toString());
   character.setAttribute('cx', betterMath(betterMath(boardWidth / 22).toString().split('.').shift()).toString());
   character.setAttribute('cy', betterMath(betterMath(boardHeight / 22).toString().split('.').shift()).toString());
@@ -166,7 +167,7 @@ function squareStyle(){
   return stylishSquares;
 }
 function turn(){
-  drawPlayer();
+//  drawPlayer();
   
   if(playerTurn > playerStat.length - 1){
     playerTurn = 0;
