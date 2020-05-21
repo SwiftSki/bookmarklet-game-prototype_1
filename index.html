@@ -1,18 +1,17 @@
 <button onclick="var mon = document.createElement('script'); mon.src='https://swiftski.github.io/bookmarklet-game-prototype_1/game.js'; document.body.appendChild(mon);">launch</button>
 <br>
 <p>everything below this point is to test JSON stuff</p>
-<p id="demo"></p>
 
 <script>
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var myObj = JSON.parse(this.responseText);
-    document.getElementById("demo").innerHTML = myObj.pets.length;
+    
   }
 };
 xmlhttp.open("GET", "json_demo.txt", true);
 xmlhttp.send();
+  
+console.log(myObj);
 </script>
-
-<p>Take a look at <a href="json_demo.txt" target="_blank">json_demo.txt</a></p>
