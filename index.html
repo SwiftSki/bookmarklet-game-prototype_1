@@ -3,11 +3,13 @@
 <p>everything below this point is to test JSON stuff</p>
 
 <script>
+var x;
+  
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var myObj = JSON.parse(this.responseText);
-    
+    x = myObj;
   }
 };
 xmlhttp.open("GET", "json_demo.txt", true);
